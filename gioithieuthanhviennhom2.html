@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 2 - Lớp 12S</title>
+    <style>
+        :root {
+            --bg-color: #faf9f6;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --accent-color: #d4a373;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+        }
+
+        /* Header & Illustration */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .minimal-illustration {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .intro {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Section Title */
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #444;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* Member List */
+        .member-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .member-item {
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .member-item:hover {
+            border-color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .member-item span {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Lesson Links Section */
+        .lessons-section {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-link {
+            display: block;
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all;
+            font-size: 0.95rem;
+            padding: 8px 0;
+        }
+
+        .lesson-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Giới thiệu nhóm & Hình minh họa tối giản -->
+        <header>
+            <div class="minimal-illustration">🌿 ✨ 🌙</div>
+            <h1>Nhóm 2 - Lớp 12S</h1>
+            <p class="intro">Nơi hội tụ của 5 nàng tiên tài năng và nhiệt huyết.</p>
+        </header>
+
+        <!-- Danh sách thành viên -->
+        <main>
+            <h2>Thành viên nhóm</h2>
+            <div class="member-list">
+                <a href="khanh-an.html" class="member-item">
+                    Trần Huỳnh Khánh An <span>&rarr;</span>
+                </a>
+                <a href="phuong-tuong.html" class="member-item">
+                    Ngô Trần Phương Tường <span>&rarr;</span>
+                </a>
+                <a href="gia-han.html" class="member-item">
+                    Nguyễn Gia Hân <span>&rarr;</span>
+                </a>
+                <a href="my-duyen.html" class="member-item">
+                    Nguyễn Thị Mỹ Duyên <span>&rarr;</span>
+                </a>
+                <a href="thuy-tram.html" class="member-item">
+                    Phan Thùy Trâm <span>&rarr;</span>
+                </a>
+            </div>
+
+            <!-- Khu vực lưu link bài học -->
+            <section class="lessons-section">
+                <h2>Tài liệu & Bài học</h2>
+                <a href="https://docs.google.com/document/d/13O35MGU6IqrGz4NXY6Eh6jAsMe0Odo1oMeASDxeG2rc/edit?pli=1&tab=t.h081m82fud0y" 
+                   target="_blank" 
+                   class="lesson-link">
+                    📄 Bài 9
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Nhóm 2 - 12S</p>
+        </footer>
+    </div>
+
+</body>
+</html>
