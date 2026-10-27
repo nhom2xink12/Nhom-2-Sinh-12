@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 2 - Lớp 12S</title>
+    <style>
+        :root {
+            --bg-color: #faf9f6;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --accent-color: #d4a373;
+            --border-color: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 750px;
+            width: 100%;
+        }
+
+        /* Header & Illustration */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .minimal-illustration {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .intro {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Section Title */
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #444;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* Member List */
+        .member-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .member-item {
+            background: var(--card-bg);
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .member-item:hover {
+            border-color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .member-item span {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Lesson Section */
+        .lessons-section {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Style thẻ bài học */
+        details.lesson-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-top: 12px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        details.lesson-card[open] {
+            border-color: var(--accent-color);
+        }
+
+        summary.lesson-header {
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #fff;
+            color: #2c3e50;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary.lesson-header::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.lesson-header::after {
+            content: "►";
+            font-size: 0.8rem;
+            color: #888;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary.lesson-header::after {
+            transform: rotate(90deg);
+        }
+
+        /* Nền trắng cho nội dung bài học */
+        .lesson-content {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+            font-size: 0.92rem;
+            color: #333;
+        }
+
+        .lesson-content h3 {
+            color: #d9534f;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .lesson-content h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .lesson-content p, .lesson-content ul {
+            margin-bottom: 10px;
+        }
+
+        .lesson-content ul {
+            padding-left: 20px;
+        }
+
+        /* Khung chứa mã nguồn nền trắng sáng / xám nhạt thay vì đen */
+        .code-block {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 1px solid #e1e4e8;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Giới thiệu nhóm & Hình minh họa tối giản -->
+        <header>
+            <div class="minimal-illustration">🌿 ✨ 🌙</div>
+            <h1>Nhóm 2 - Lớp 12S</h1>
+            <p class="intro">Nơi hội tụ của 5 nàng tiên tài năng và nhiệt huyết.</p>
+        </header>
+
+        <!-- Danh sách thành viên -->
+        <main>
+            <h2>Thành viên nhóm</h2>
+            <div class="member-list">
+                <a href="khanh-an.html" class="member-item">
+                    Trần Huỳnh Khánh An <span>&rarr;</span>
+                </a>
+                <a href="phuong-tuong.html" class="member-item">
+                    Ngô Trần Phương Tường <span>&rarr;</span>
+                </a>
+                <a href="gia-han.html" class="member-item">
+                    Nguyễn Gia Hân <span>&rarr;</span>
+                </a>
+                <a href="my-duyen.html" class="member-item">
+                    Nguyễn Thị Mỹ Duyên <span>&rarr;</span>
+                </a>
+                <a href="thuy-tram.html" class="member-item">
+                    Phan Thùy Trâm <span>&rarr;</span>
+                </a>
+            </div>
+
+            <!-- Khu vực Tài liệu & Bài học (Nền trắng) -->
+            <section class="lessons-section">
+                <h2>Tài liệu & Bài học</h2>
+                
+                <!-- BÀI 3 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 3: CÁC THIẾT BỊ KẾT NỐI MẠNG</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 3: CÁC THIẾT BỊ KẾT NỐI MẠNG</h3>
+                        <h4>LUYỆN TẬP</h4>
+                        <p><strong>Câu 1:</strong></p>
+                        <ul>
+                            <li><strong>Router Wi-Fi (Router không dây):</strong> Cung cấp kết nối internet cho các thiết bị trong gia đình, cho phép chúng kết nối với nhau qua mạng Wi-Fi. Nó cũng có thể có các cổng Ethernet để kết nối các thiết bị có dây như máy tính để bàn, TV thông minh, hoặc máy in[cite: 5].</li>
+                            <li><strong>Switch Ethernet:</strong> Kết nối nhiều thiết bị có dây trong gia đình, cho phép mở rộng cổng Ethernet trên router và kết nối nhiều máy tính hoặc thiết bị có dây khác nhau với mạng[cite: 5].</li>
+                            <li><strong>Bộ kết nối Powerline:</strong> Sử dụng dây điện trong nhà để truyền dữ liệu, cho phép mở rộng mạng mà không cần dây cáp Ethernet[cite: 5].</li>
+                        </ul>
+                        <p><strong>Câu 2:</strong> Kết nối qua điện thoại di động, sử dụng điện thoại làm modem; sử dụng thiết bị định tuyến 3G/4G[cite: 5].</p>
+                        <h4>VẬN DỤNG</h4>
+                        <p><strong>Câu 1:</strong> Hành khách hoàn toàn có thể truy cập Internet qua Wi-Fi trên xe khách đường dài[cite: 5].</p>
+                        <p><em>Cách thực hiện:</em></p>
+                        <ul>
+                            <li>Xe được trang bị một Bộ phát Wi-Fi di động (Modem/Router 4G/5G) có lắp SIM dữ liệu di động[cite: 5].</li>
+                            <li>Thiết bị này thu tín hiệu sóng di động (4G/5G) từ các trạm phát sóng (BTS) của nhà mạng dọc đường đi[cite: 5].</li>
+                            <li>Thiết bị chuyển đổi tín hiệu di động đó và phát ra sóng Wi-Fi nội bộ trên xe để hành khách kết nối[cite: 5].</li>
+                            <li>Nguồn điện cấp cho bộ phát Wi-Fi được lấy trực tiếp từ nguồn điện/cổng sạc trên xe[cite: 5].</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- BÀI 4 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 4: GIAO THỨC MẠNG</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 4: GIAO THỨC MẠNG</h3>
+                        <h4>CÂU HỎI TRANG 25</h4>
+                        <p><strong>Câu 1:</strong> Giao thức IP (Internet Protocol) là giao thức quan trọng giúp các thiết bị kết nối và trao đổi dữ liệu trên Internet[cite: 5].</p>
+                        <ul>
+                            <li><strong>Địa chỉ IP:</strong> Giúp xác định thiết bị gửi và thiết bị nhận dữ liệu[cite: 5].</li>
+                            <li><strong>Header IP:</strong> Chứa các thông tin cần thiết của gói tin, như địa chỉ nguồn, địa chỉ đích và độ dài gói tin[cite: 5].</li>
+                            <li><strong>Định tuyến:</strong> Xác định đường đi để dữ liệu có thể đến đúng thiết bị đích[cite: 5].</li>
+                        </ul>
+                        <p><strong>Câu 2:</strong> Giao thức TCP[cite: 5]</p>
+                        <ul>
+                            <li><strong>Thiết lập kết nối:</strong> Tạo kết nối giữa máy gửi và máy nhận trước khi truyền dữ liệu[cite: 5].</li>
+                            <li><strong>Chia gói tin:</strong> Dữ liệu được chia thành các gói nhỏ để kiểm tra[cite: 5].</li>
+                            <li><strong>Đảm bảo độ tin cậy:</strong> Nếu gói tin mất hoặc lỗi, TCP yêu cầu gửi lại[cite: 5].</li>
+                            <li><strong>Kiểm soát luồng:</strong> Dùng cửa sổ trượt để điều chỉnh tốc độ truyền[cite: 5].</li>
+                        </ul>
+                        <h4>LUYỆN TẬP</h4>
+                        <p>Các quy tắc chính của cuộc gọi điện thoại (như nhấc ống nghe, quay số, phát nhạc chờ, reo chuông, nói chuyện, kết thúc cuộc gọi, báo lỗi) tương tự như các giao thức trong mạng máy tính đảm bảo truyền dữ liệu tin cậy và hiệu quả[cite: 5].</p>
+                        <h4>VẬN DỤNG</h4>
+                        <p><strong>Câu 1:</strong> Lợi ích của tên miền (Dễ nhớ, Phân cấp, Linh hoạt). Các lớp tên miền: TLD (.com, .vn), SLD, Subdomain. Tổ chức quản lý tại Việt Nam: VNNIC[cite: 5].</p>
+                        <p><strong>Câu 2:</strong> Lệnh Ping dùng để kiểm tra kết nối mạng bằng gói tin ICMP Echo Request/Reply[cite: 5].</p>
+                    </div>
+                </details>
+
+                <!-- BÀI 5 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 5: THỰC HÀNH CHIA SẺ TÀI NGUYÊN TRÊN MẠNG</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 5: THỰC HÀNH CHIA SẺ TÀI NGUYÊN TRÊN MẠNG</h3>
+                        <p><strong>Thực hiện chia sẻ toàn bộ một đĩa trên Windows:</strong></p>
+                        <ul>
+                            <li><strong>Chuẩn bị:</strong> Đăng nhập với quyền quản trị, kiểm tra ổ đĩa cần chia sẻ[cite: 5].</li>
+                            <li><strong>Chia sẻ đĩa:</strong> Nhấp chuột phải vào ổ đĩa &rarr; Chọn Properties &rarr; Chọn tab Sharing &rarr; Nhấn Advanced Sharing &rarr; Đánh dấu "Share this folder" &rarr; Cấu hình Permissions &rarr; Nhấn OK[cite: 5].</li>
+                            <li><strong>Kiểm tra:</strong> Trên máy khác trong mạng LAN, mở File Explorer nhập địa chỉ IP/tên máy và tên chia sẻ để truy cập[cite: 5].</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- BÀI 6 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 6: GIAO TIẾP VÀ ỨNG XỬ TRONG KHÔNG GIAN MẠNG</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 6: GIAO TIẾP VÀ ỨNG XỬ TRONG KHÔNG GIAN MẠNG</h3>
+                        <h4>LUYỆN TẬP & VẬN DỤNG</h4>
+                        <p>Kể về trải nghiệm học tập nhóm trực tuyến qua Zalo/Google Meet hiệu quả[cite: 5]. Vận dụng viết thư điện tử xin mượn vở ghi chép bài học khi bị ốm[cite: 5].</p>
+                    </div>
+                </details>
+
+                <!-- BÀI 7 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 7: HTML VÀ CẤU TRÚC TRANG WEB</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 7: HTML VÀ CẤU TRÚC TRANG WEB</h3>
+                        <h4>LUYỆN TẬP</h4>
+                        <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Văn bản về sen&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;
+        Trong đầm gì đẹp bằng sen&lt;br&gt;
+        Lá xanh bông trắng lại chen nhị vàng&lt;br&gt;
+        Nhị vàng bông trắng lá xanh&lt;br&gt;
+        Gần bùn mà chẳng hôi tanh mùi bùn
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                    </div>
+                </details>
+
+                <!-- BÀI 8 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 8: ĐỊNH DẠNG VĂN BẢN</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 8: ĐỊNH DẠNG VĂN BẢN</h3>
+                        <h4>LUYỆN TẬP</h4>
+                        <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+	&lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+	&lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+	&lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                    </div>
+                </details>
+
+                <!-- BÀI 9 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 9: TẠO DANH SÁCH, BẢNG</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 9: TẠO DANH SÁCH, BẢNG</h3>
+                        <h4>Luyện tập trang 56</h4>
+                        <div class="code-block">&lt;table style="border-collapse: collapse;"&gt;
+  &lt;tr&gt;
+    &lt;th rowspan="2" style="border: 2px solid blue;"&gt;Họ tên&lt;/th&gt;
+    &lt;th rowspan="3" style="border: 2px solid blue;"&gt;Điểm thi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="border: 2px solid red;"&gt;Toán&lt;/td&gt;
+    &lt;td style="border: 2px solid yellow;"&gt;Vật lí&lt;/td&gt;
+    &lt;td style="border: 2px solid green;"&gt;Hóa học&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div>
+
+                        <h4>Vận dụng trang 56 (Python)</h4>
+                        <div class="code-block">def generate_html_table(data):
+    html_content = "&lt;table style=\"border-collapse: collapse;\"&gt;"
+    html_content += "&lt;tr&gt;"
+    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Họ tên&lt;/th&gt;"
+    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Toán&lt;/th&gt;"
+    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Vật lí&lt;/th&gt;"
+    html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Hóa học&lt;/th&gt;"
+    html_content += "&lt;/tr&gt;"
+    for row in data:
+        html_content += "&lt;tr&gt;"
+        for value in row:
+            html_content += f"&lt;td style=\"border: 2px solid black;\"&gt;{value}&lt;/td&gt;"
+        html_content += "&lt;/tr&gt;"
+    html_content += "&lt;/table&gt;"
+    return html_content</div>
+                    </div>
+                </details>
+
+                <!-- BÀI 10 -->
+                <details class="lesson-card">
+                    <summary class="lesson-header"><span>📄 BÀI 10: TẠO LIÊN KẾT</span></summary>
+                    <div class="lesson-content">
+                        <h3>BÀI 10: TẠO LIÊN KẾT</h3>
+                        <h4>LUYỆN TẬP</h4>
+                        <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là Nguyễn Gia Hân.&lt;/p&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+                    </div>
+                </details>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Nhóm 2 - 12S</p>
+        </footer>
+    </div>
+
+</body>
+</html>
